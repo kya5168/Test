@@ -54,3 +54,10 @@ class GFG
 }
 
 //submitted by kya5168
+//Output
+{}{}{}
+{}{{}}
+{{}}{}
+{{}{}}
+{{{}}}
+Press any key to continue . . .
