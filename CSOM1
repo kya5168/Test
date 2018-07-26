@@ -1,0 +1,38 @@
+using System;
+using System.Collections.Generic;
+using Microsoft.SharePoint.Client;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CSOMAPP
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      //Client Context - Get the cvontext for sharepoint site
+      ClientContext clientContext = new ClientContext("https://share.ams.bnymellon.net/sites/EDS/SPDevelopment/");
+
+      //Get the Sharepoint Web
+      Web web = clientContext.Web;
+
+      //Get the Sharepoint list collection for the web
+      ListCollection listColl = web.Lists;
+
+      // Retreive the list collection
+      clientContext.Load(listColl);
+
+      //execute query
+      clientContext.ExecuteQuery();
+
+      //Loop through the list
+      foreach(List list in listColl)
+      {
+        Console.WriteLine("List Name:" + list.Title + "; ID: " + list.Id);
+      }
+      Console.ReadLine();
+
+    }
+  }
+}
