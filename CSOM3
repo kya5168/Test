@@ -1,0 +1,26 @@
+using System;
+using Microsoft.SharePoint.Client;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace csomApp3
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      ClientContext clientContext = new ClientContext("https://share.ams.bnymellon.net/sites/EDS/SPDevelopment/");
+
+      List list = clientContext.Web.Lists.GetByTitle("AIFMD Defects");
+      ListItemCreationInformation newItem = new ListItemCreationInformation();
+    
+      ListItem listItem = list.AddItem(newItem);
+      listItem["EntryDate"] = "07/31/2018";
+      listItem.Update();
+      clientContext.ExecuteQuery();
+
+    }
+  }
+}
