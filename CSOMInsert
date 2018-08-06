@@ -1,0 +1,37 @@
+namespace csomApp3
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      ClientContext clientContext = new ClientContext("https://myshare.bnymellon.net/sites/EDS/SPDevelopment/");
+
+      List list = clientContext.Web.Lists.GetByTitle("AIFMD Defects");
+      ListItemCreationInformation newItem = new ListItemCreationInformation();
+
+      CamlQuery query = new CamlQuery();
+      query.ViewXml = "<View/>";
+      ListItemCollection items = list.GetItems(query);
+      clientContext.Load(list);
+      clientContext.Load(items);
+      clientContext.ExecuteQuery();
+
+      /*ListItem listItem = list.AddItem(newItem);
+      listItem["EntryDate"] = "07/31/2018";
+      listItem.Update();*/
+      //IEnumerable<ListItem> items = null;
+      foreach (ListItem item in items)
+      {
+        if(item.Id == 14)
+        {          
+          {
+            item["Total_Defects"] = "0";
+            item.Update();
+          }
+        }
+      }clientContext.ExecuteQuery();
+      
+
+    }
+  }
+}
