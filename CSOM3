@@ -13,7 +13,7 @@ namespace csomApp3
     {
       ClientContext clientContext = new ClientContext("url/");
 
-      List list = clientContext.Web.Lists.GetByTitle("Defects");
+      List list = clientContext.Web.Lists.GetByTitle("List0");
       ListItemCreationInformation newItem = new ListItemCreationInformation();
     
       ListItem listItem = list.AddItem(newItem);
