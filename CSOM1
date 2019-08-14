@@ -12,7 +12,7 @@ namespace CSOMAPP
     static void Main(string[] args)
     {
       //Client Context - Get the cvontext for sharepoint site
-      ClientContext clientContext = new ClientContext("https://share.ams.bnymellon.net/sites/EDS/SPDevelopment/");
+      ClientContext clientContext = new ClientContext("url");
 
       //Get the Sharepoint Web
       Web web = clientContext.Web;
