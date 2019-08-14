@@ -13,7 +13,7 @@ namespace csomApp2
     {
       ClientContext clientContext = new ClientContext("url");
 
-      List list = clientContext.Web.Lists.GetByTitle("Defects");
+      List list = clientContext.Web.Lists.GetByTitle("List0");
 
       CamlQuery query = new CamlQuery();
       query.ViewXml = "<View/>";
