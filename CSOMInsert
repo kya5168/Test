@@ -4,9 +4,9 @@ namespace csomApp3
   {
     static void Main(string[] args)
     {
-      ClientContext clientContext = new ClientContext("https://myshare.bnymellon.net/sites/EDS/SPDevelopment/");
+      ClientContext clientContext = new ClientContext("url");
 
-      List list = clientContext.Web.Lists.GetByTitle("AIFMD Defects");
+      List list = clientContext.Web.Lists.GetByTitle("Defects");
       ListItemCreationInformation newItem = new ListItemCreationInformation();
 
       CamlQuery query = new CamlQuery();
