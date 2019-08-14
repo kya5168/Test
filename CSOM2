@@ -11,9 +11,9 @@ namespace csomApp2
   {
     static void Main(string[] args)
     {
-      ClientContext clientContext = new ClientContext("https://share.ams.bnymellon.net/sites/EDS/SPDevelopment/");
+      ClientContext clientContext = new ClientContext("url");
 
-      List list = clientContext.Web.Lists.GetByTitle("AIFMD Defects");
+      List list = clientContext.Web.Lists.GetByTitle("Defects");
 
       CamlQuery query = new CamlQuery();
       query.ViewXml = "<View/>";
